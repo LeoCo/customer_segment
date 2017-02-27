@@ -21169,6 +21169,13 @@ Once you have performed this implementation, the dataset will be stored in the v
 <p><strong>Answer:</strong></p>
 <p>There are many points classified as outliers. In general I would keep them precisely because they are many and we could loose precious information. If many points are classified as outliers maybe they are not real outliers.</p>
 <p>We could take a subset of the outliers. In fact, we take out the outliers for more than one feature, the points: 154, 128, 65, 66, 75</p>
+<p>We should take in consideration that:</p>
+<ul>
+<li>These points are in an area of low density for two feature (since we have just 6 features, it is 33% of the feaure) or more</li>
+<li>The weight of these outliers is considerably important compared to the other outliers</li>
+<li>A clustering algorithm is sensitive to outliers</li>
+</ul>
+<p>That is why these outliers could considerably skew our final clustering model and it is better to remove them from the fitting process.</p>
 
 </div>
 </div>
@@ -21834,30 +21841,30 @@ iIiIiIiIiIT4P7qrsa29eEuDAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The total variance explained by the first two principal components is 71.79% and the total variance explained by the first 4 components is 93.28%.</p>
+<p>The total variance explained by the first two principal components is 70.68% and the total variance explained by the first 4 components is 93.11%.</p>
 <p>Component analysis:</p>
 <ul>
 <li><p>First Component:</p>
 <ul>
-<li>It explains most (43.61%) of the variance by itself</li>
+<li>It explains most (44.30%) of the variance by itself</li>
 <li>It has high an positive weights for Detergent_Paper, Grocery and Milk that is inline with the previous intuition about a strong correletion between these components</li>
 </ul>
 </li>
 <li><p>Second Component:</p>
 <ul>
-<li>Even if it is the second it explains a large (28.18%) part of the rest of the variance</li>
+<li>Even if it is the second it explains a large (26.38%) part of the rest of the variance</li>
 <li>It is justified because it has high weights on the other three components (Fresh, Frozen and Delicatessen) and make a correlation between them</li>
 </ul>
 </li>
 <li><p>Third Component:</p>
 <ul>
-<li>It explains a lower but still significative (11.81%) part of the variance</li>
+<li>It explains a lower but still significative (12.31%) part of the variance</li>
 <li>It describes the inverse proportionality of Fresh (positive significant weight) and Delicatessen (negative significant weight)</li>
 </ul>
 </li>
 <li><p>Fourth Component:</p>
 <ul>
-<li>It explains slightly lower variance (9.78%) than the third</li>
+<li>It explains slightly lower variance (10.12%) than the third</li>
 <li>It describes the inverse proportionality of Frozen (positive significant weight) and Delicatessen (negative significant weight)</li>
 </ul>
 </li>
